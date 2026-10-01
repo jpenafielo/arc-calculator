@@ -9,7 +9,7 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/jpenafielo/sezzle-calculator/backend/internal/httpapi"
+	"github.com/jpenafielo/arc-calculator/backend/internal/httpapi"
 )
 
 func main() {

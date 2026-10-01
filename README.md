@@ -101,6 +101,7 @@ See [COVERAGE.md](COVERAGE.md) for the recorded results.
 - The arithmetic is a small pure Go package, separate from HTTP parsing and response mapping. This keeps edge cases easy to test without starting a server.
 - The API accepts a strict JSON object, rejects unknown fields and extra JSON, and caps request bodies at 4 KiB. Both layers reject invalid or non-finite numbers.
 - The browser only formats results; it never computes them locally. React escapes server error text when rendering it.
+- React keeps the page layout, calculator state, interactive form, and result display in separate modules.
 - Go's `float64` is appropriate for this general-purpose calculator. It is **not** decimal-exact: values such as `0.1 + 0.2` can have binary floating-point rounding. Money calculations would need a decimal representation.
 - esbuild keeps the frontend setup small. Go serves its static output, allowing local use with a single origin and no proxy or CORS policy.
-- The multistage Docker build produces one container with the Go server and compiled React files. Compose exposes it on port 8080, so starting the full application takes one command.
+- The committed npm lockfile and `npm ci` make Docker dependency installation reproducible. The multistage build produces one container with the Go server and compiled React files. Compose exposes it on port 8080, so starting the full application takes one command.

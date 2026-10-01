@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/jpenafielo/sezzle-calculator/backend/internal/calculator"
+	"github.com/jpenafielo/arc-calculator/backend/internal/calculator"
 )
 
 type calculateRequest struct {

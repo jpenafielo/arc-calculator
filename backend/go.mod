@@ -1,3 +1,3 @@
-module github.com/jpenafielo/sezzle-calculator/backend
+module github.com/jpenafielo/arc-calculator/backend
 
 go 1.22
