@@ -2,14 +2,21 @@
 
 A small full-stack calculator built with React, TypeScript, and Go. The browser sends each calculation to a stateless REST API; the Go service owns arithmetic and input validation.
 
-## Requirements
+## Run with one command
 
-- Go 1.22 or newer
-- Node.js 20 or newer and npm
+With Docker Desktop (or Docker Engine) and Compose v2 running, run this from the repository root in PowerShell, bash, or zsh:
 
-## Run locally
+```sh
+docker compose up --build
+```
 
-In one terminal, build the frontend and watch for changes:
+Open [http://localhost:8080](http://localhost:8080). Press Ctrl+C to stop. If your Docker installation provides the standalone Compose command instead, use `docker-compose up --build`.
+
+The Docker build installs frontend dependencies, builds React and Go, and serves both the UI and API from one container. No local Go or Node.js installation is needed for this route.
+
+## Run without Docker
+
+This route requires Go 1.22 or newer and Node.js 20 or newer with npm. From the repository root, build the frontend and watch for changes in one terminal:
 
 ```sh
 cd frontend
@@ -96,3 +103,4 @@ See [COVERAGE.md](COVERAGE.md) for the recorded results.
 - The browser only formats results; it never computes them locally. React escapes server error text when rendering it.
 - Go's `float64` is appropriate for this general-purpose calculator. It is **not** decimal-exact: values such as `0.1 + 0.2` can have binary floating-point rounding. Money calculations would need a decimal representation.
 - esbuild keeps the frontend setup small. Go serves its static output, allowing local use with a single origin and no proxy or CORS policy.
+- The multistage Docker build produces one container with the Go server and compiled React files. Compose exposes it on port 8080, so starting the full application takes one command.
