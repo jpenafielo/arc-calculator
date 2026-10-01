@@ -17,11 +17,21 @@ npm install
 npm run dev
 ```
 
-In another terminal, start the API and serve the built frontend:
+In another terminal, start the API and serve the built frontend. From the repository root, use the command for your shell:
+
+**macOS/Linux (bash or zsh)**
 
 ```sh
 cd backend
 STATIC_DIR=../frontend/dist go run ./cmd/server
+```
+
+**Windows (PowerShell)**
+
+```powershell
+cd backend
+$env:STATIC_DIR = "../frontend/dist"
+go run ./cmd/server
 ```
 
 Open [http://localhost:8080](http://localhost:8080). The frontend and API share one origin, so no CORS configuration is needed. For a one-time production build, run `npm run build` instead of `npm run dev`. Set `LISTEN_ADDR` to change the server address (default `:8080`). Run the API alone with `go run ./cmd/server`.
@@ -38,6 +48,12 @@ curl -X POST http://localhost:8080/api/calculate \
 
 ```json
 {"result":4.5}
+```
+
+In PowerShell, use `Invoke-RestMethod` for the same request:
+
+```powershell
+Invoke-RestMethod -Method Post -Uri http://localhost:8080/api/calculate -ContentType "application/json" -Body '{"operation":"divide","a":9,"b":2}'
 ```
 
 ```sh
