@@ -1,10 +1,10 @@
-# Prompts e instrucciones del desarrollo
+# Development prompts and instructions
 
-Este documento resume la consigna inicial y las indicaciones con las que Juan Sebastián dirigió el desarrollo. Él eligió el repositorio de publicación, probó el proyecto en Windows, reportó errores de arranque y solicitó mejoras de estructura y despliegue. Codex asistió con una parte sustancial de la implementación, las pruebas y la documentación; las decisiones y revisiones del candidato guiaron las iteraciones.
+This document summarizes the initial assignment and the instructions Juan Sebastián used to guide the work. He chose the publication repository, tested the project on Windows, reported startup issues, and requested improvements to the code structure and deployment. Codex assisted with a substantial portion of the implementation, tests, and documentation; the candidate's decisions and reviews guided the iterations.
 
-## Consigna inicial compartida con Codex
+## Initial assignment shared with Codex
 
-Resumen del contenido técnico de la consigna que el candidato compartió en el primer mensaje; se omite el saludo del correo.
+The following is a summary of the technical brief shared in the first message, with the email greeting omitted.
 
 ~~~text
 Objective
@@ -50,16 +50,16 @@ Instructions:
 6. Make sure your README includes setup instructions, how to run the frontend and backend, examples of API calls, and design decisions or assumptions.
 ~~~
 
-## Instrucciones de seguimiento durante el desarrollo
+## Follow-up instructions during development
 
-1. **Publicación del proyecto.** Publica la solución en mi cuenta personal de GitHub bajo `jpenafielo/arc-calculator`. Verifica que el nuevo repositorio contenga la versión final y, una vez confirmado, elimina el repositorio anterior.
+1. **Repository publication.** Publish the solution to my personal GitHub account as `jpenafielo/arc-calculator`. Confirm that the new repository contains the final version, then delete the previous repository.
 
-2. **Compatibilidad con Windows.** Corrige las instrucciones de arranque para PowerShell. La asignación `STATIC_DIR=../frontend/dist go run ./cmd/server` usa sintaxis de Unix y no se ejecuta en mi entorno; documenta la variante correcta para Windows.
+2. **Windows compatibility.** Correct the startup instructions for PowerShell. The command `STATIC_DIR=../frontend/dist go run ./cmd/server` uses Unix environment-variable syntax and does not run in my environment. Document the equivalent Windows command.
 
-3. **Puesta en marcha con un solo comando.** Simplifica la ejecución del proyecto para que frontend y backend puedan iniciarse con un único comando. Evalúa Docker Compose y una alternativa local como `concurrently`, elige la opción más adecuada para esta entrega y explica sus requisitos en el README.
+3. **Single-command startup.** Simplify the setup so the frontend and backend can be started with one command. Evaluate Docker Compose and a local option such as `concurrently`, choose the more suitable approach for this assignment, and document its prerequisites in the README.
 
-4. **Diagnóstico de Docker.** Revisa el error de conexión con `//./pipe/docker_engine` que aparece al ejecutar Compose en Windows. Aclara cómo comprobar que Docker Desktop o Docker Engine estén activos y qué pasos seguir antes de volver a iniciar la aplicación.
+4. **Docker troubleshooting.** Investigate the connection error involving `//./pipe/docker_engine` when running Compose on Windows. Explain how to check whether Docker Desktop or Docker Engine is running and what to do before retrying the application startup.
 
-5. **Revisión y corrección del código.** Evalúa si la implementación sigue convenciones de código limpio, con especial atención a responsabilidades, nombres, estructura y mantenibilidad. Aplica las correcciones concretas que se identifiquen.
+5. **Code quality review and corrections.** Assess whether the implementation follows clean code conventions, focusing on responsibilities, naming, structure, and maintainability. Apply the specific corrections identified in the review.
 
-6. **Revisión final de la entrega.** Compara el resultado con todos los requisitos de la prueba técnica e identifica cualquier punto pendiente antes de considerar la solución terminada.
+6. **Final requirements review.** Compare the completed solution against every requirement in the assignment and identify any remaining gaps before considering the submission complete.
